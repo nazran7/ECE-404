@@ -14,10 +14,12 @@ sudo iptables -t raw -X
 sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 
 # 3. Blocking a list of IP addresses coming from yahoo.com
-sudo iptables -A INPUT -s 87.248.100.215 -j DROP
+sudo iptables -A INPUT -s 98.137.11.163 -j DROP
+sudo iptables -A INPUT -s 98.137.11.164 -j DROP
 sudo iptables -A INPUT -s 74.6.231.20 -j DROP
-sudo iptables -A INPUT -s 10.0.3.78 -j DROP
-sudo iptables -A INPUT -s 10.0.7.129 -j DROP
+sudo iptables -A INPUT -s 74.6.231.21 -j DROP
+sudo iptables -A INPUT -s 74.6.143.25 -j DROP
+sudo iptables -A INPUT -s 74.6.143.26 -j DROP
 
 # 4. Blocking my computer from being pinged by other hosts
 sudo iptables -A INPUT -p icmp --icmp-type echo-request -j REJECT
